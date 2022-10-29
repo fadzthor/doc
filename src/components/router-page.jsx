@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Doc from "./light";
 import Desc from "./doc-api-desc";
+import Dashboard from './doc-api-dashboard';
 import Medicine from "./doc-api-medicine";
 import Medicinecategory from "./doc-api-medicine-category";
 import Medicinemutation from "./doc-api-medicine-mutation";
@@ -12,6 +13,8 @@ import Medicinerequest from "./doc-api-medicine-request";
 import Medicinestock from "./doc-api-medicine-stock";
 import Medicineunit from "./doc-api-medicine-unit";
 import Patient from "./doc-api-patient";
+import Position from './doc-api-postion';
+import Restock from './doc-api-restock';
 import Rko from "./doc-api-rko";
 import Upload from "./doc-api-upload";
 import User from "./doc-api-user";
@@ -356,6 +359,9 @@ function RRD() {
                             
                           >
                             <li>
+                              <Link to="/d">Dashboard</Link>
+                            </li>
+                            <li>
                               <Link to="/m">Medicine</Link>
                             </li>
                             <li>
@@ -386,6 +392,12 @@ function RRD() {
                             </li>
                             <li>
                               <Link to="/p">Patient</Link>
+                            </li>
+                            <li>
+                              <Link to="/po">Position</Link>
+                            </li>
+                            <li>
+                              <Link to="/r">Restock</Link>
                             </li>
                             <li>
                               <Link to="/rko">
@@ -570,6 +582,7 @@ function RRD() {
             </div>
                 <Routes>
 				<Route exact path="/desc" element={<Desc />} />
+                  <Route exact path="/d" element={<Dashboard />} />
                   <Route exact path="/m" element={<Medicine />} />
                   <Route exact path="/mc" element={<Medicinecategory />} />
                   <Route exact path="/mm" element={<Medicinemutation />} />
@@ -579,6 +592,8 @@ function RRD() {
                   <Route exact path="/mr" element={<Medicinerequest />} />
                   <Route exact path="/ms" element={<Medicinestock />} />
                   <Route exact path="/mu" element={<Medicineunit />} />
+                  <Route exact path="/po" element={<Position />} />
+                  <Route exact path="/r" element={<Restock />} />
                   <Route exact path="/p" element={<Patient />} />
                   <Route exact path="/rko" element={<Rko />} />
                   <Route exact path="/up" element={<Upload />} />
